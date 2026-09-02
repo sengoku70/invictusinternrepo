@@ -51,3 +51,14 @@ In `App.jsx`, updated the filter condition to compare values as strings (`String
 In AddExpenseForm.jsx, I added setDescription("") and setAmount("") inside the form's submi` handler so the input boxes automatically clear after successfully saving an expense.
 
 ---
+
+## Bug 5
+
+**How to reproduce:** Look at the Balances panel on the right side of the screen.
+
+**What is wrong:** The labels and status colors were inverted. Members who paid more than their share and are owed money by the group were labeled in red as "owes", while members who owe money were labeled in green as "is owed".
+
+**What I changed:**
+In BalancesPanel.jsx, corrected the conditional check so that positive balances bal > 0.005 display is owed (with green styling), and negative balances bal < -0.005 display owes (with red styling).
+
+---
