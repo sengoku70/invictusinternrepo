@@ -14,7 +14,8 @@ Keep this file in the repo and **commit it** with your fixes.
 
 **What I changed:**
 
----
+---1.in the format.js returning the format as a Date object so it can be mathematically subtracted and processed
+    2. in the expanse list the sorted array of dates as b.date -> a.date so the latest date is at the top
 
 ## Bug 2
 
