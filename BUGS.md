@@ -29,3 +29,25 @@ Keep this file in the repo and **commit it** with your fixes.
 3. In `store.js`, updated the reducer to delete and update items matching `e.id === action.id` instead of using array indexes.
 
 ---
+
+## Bug 3
+
+**How to reproduce:** In the "Filter" card, select any person from the "Paid by" dropdown (e.g. Aisha Khan).
+
+**What is wrong:** The app shows "No expenses match these filters." for any person selected, even though there are expenses paid by them. The dropdown returns a string ID (e.g. `"1"`) while the expense stores a number (`1`), causing the strict check `e.paidBy !== paidBy` to fail.
+
+**What I changed:**
+In `App.jsx`, updated the filter condition to compare values as strings (`String(e.paidBy) !== String(paidBy)`) so that selecting a person correctly displays their expenses.
+
+---
+
+## Bug 4
+
+**How to reproduce:** Enter a description and an amount in the "Add expense" form and click "Save expense".
+
+**What is wrong:** After the expense is added, the description and amount input fields remain filled with the old values instead of resetting, making it easy to accidentally submit duplicate entries.
+
+**What I changed:**
+In AddExpenseForm.jsx, I added setDescription("") and setAmount("") inside the form's submi` handler so the input boxes automatically clear after successfully saving an expense.
+
+---
